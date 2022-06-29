@@ -180,6 +180,7 @@ main{
 }
 
 
+
 .form_container{
     margin-top: 20px;
 }
@@ -188,6 +189,50 @@ main{
     display: none;
 }
 
+.form_container2 .input{
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #e3e3e3;
+    padding: 10px;
+    display: flex;
+
+}
+
+.form_container2 p{
+    font-size: 14px;
+    text-align: right;
+    color: #3939AB ;
+    cursor: pointer;
+}
+
+
+.form_container2 .input input{
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.form_container2 .input input:focus{
+    outline: none;
+}
+
+.form_container2 .login{
+    margin-top:10px ;
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #3939AB;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+
+}
+
+.form_container2 .login:hover{
+    transform: scale(0.9);
+    background-color: #7373f5;
+}
 
 
 .right_section .login{
@@ -257,5 +302,22 @@ margin-right: 10px;
 }
 
 .registration:hover{
+    transform: scale(0.9);
+}
+
+.registration2{
+    display: none;
+    padding: 12px 12px;
+    width: 100%;
+    background-color: transparent;
+    text-align: center;
+    color: #000;
+    border: 1px solid #3939AB;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.registration2:hover{
     transform: scale(0.9);
 }
