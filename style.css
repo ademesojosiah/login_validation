@@ -17,12 +17,38 @@ main{
     align-items: center;
 }
 
+.ring_circle2{
+    position: absolute;
+    bottom: 30px;
+    right: 120px;
+    width: 160px;
+    height: 160px;
+    z-index: 1;
+}
+
+
 .ring_circle{
     position: absolute;
     top: 200px;
     left: 120px;
     width: 160px;
-    height: 200px;
+    height: 185px;
+    z-index: 3;
+    animation: rotatee 10s ease-in-out infinite;
+
+}
+
+@keyframes rotatee {
+    0%{
+        transform: rotate(0deg);
+    }
+    
+   
+    100%{
+        transform: rotate(360deg);
+    }
+    
+    
 }
 
 .container{
@@ -32,6 +58,7 @@ main{
     height: 80vh;
     width: 70vw;
     display: flex;
+    z-index: 2;
 }
 
 .left_section{
@@ -107,10 +134,128 @@ main{
 
 
 .right_section{    
-    background-color: transparent;
+    background-color: rgba(255, 255, 255, 0.356);
     border-top-right-radius  : 20px;
     border-bottom-right-radius  : 20px;
     display:flex;
     justify-content: center;
+    /* align-items: center; */
     width: 43%;
+    color: rgb(0, 0, 0);
+    flex-direction: column;
+    padding: 50px;  
+    text-align: center;
+}
+
+.right_section h3{
+    text-align: center;
+}
+
+.form_container .input{
+    margin-top: 10px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #e3e3e3;
+    padding: 10px;
+    display: flex;
+
+}
+
+.form_container p{
+    font-size: 14px;
+    text-align: right;
+    color: #3939AB ;
+    cursor: pointer;
+}
+
+
+.form_container .input input{
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+.form_container .input input:focus{
+    outline: none;
+}
+
+
+.form_container{
+    margin-top: 20px;
+}
+.form_container2{
+    margin-top: 20px;
+    display: none;
+}
+
+
+
+.right_section .login{
+    text-align: center;
+    width: 100%;
+    padding: 10px;
+    background-color: #3939AB;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+
+}
+
+.right_section .login:hover{
+    transform: scale(0.9);
+    background-color: #7373f5;
+}
+
+ .or p::before , .or p::after{
+    background-color: #bbb;
+    vertical-align: middle;
+    display: inline-block;
+    content: "";
+    height: 1px;
+    width: 20%;
+    margin: 5px;
+
+}
+
+.google_github{
+    display: flex;
+
+}
+
+.google_github1 , .google_github2 {
+    padding: 5px;
+    width: 50%;
+    background-color: transparent;
+    text-align: center;
+    color: #000;
+    border: 1px solid #3939AB;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.google_github1:hover, .google_github2:hover{
+    transform: scale(0.9);
+}
+.google_github1 img, .google_github2 img{
+margin-right: 10px;
+
+}
+
+.registration{
+    padding: 12px 12px;
+    width: 100%;
+    background-color: transparent;
+    text-align: center;
+    color: #000;
+    border: 1px solid #3939AB;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.registration:hover{
+    transform: scale(0.9);
 }
