@@ -30,21 +30,29 @@
             <section class="right_section">
                 <h3 class="welcome">Welcome</h3>
                 <form action="" class="form_container">
-                    <div class="input" ><img src="/img/icon.png" alt=""><input  type="email" name="" id="email" placeholder="Email"></div>
-                    <div class="input" ><img src="/img/Group (1).png" alt=""><input  type="password" name="" id="password" placeholder="Password"></div>
+                    <p class="user_err"></p>
+                    <div class="input" ><img src="/img/icon.png" alt=""><input  type="email" name="" id="email" placeholder="Email" required></div>
+                    <div class="input" ><img src="/img/Group (1).png" alt=""><input  type="password" name="" id="password" placeholder="Password" required></div>
+                    
                     <p>Forgot Password?</p>
+                    <button class="login" id="login">Login</button>
                 </form>
-                <form action="" class="form_container2">
-                    <div class="input" ><input  type="text" name="" id="firstname" placeholder="First name"></div>
-                    <div class="input" ><input  type="text" name="" id="lastname" placeholder="Last name"></div>
-                    <div class="input" ><input  type="text" name="" id="username" placeholder="Username"></div>
-                    <div class="input" ><input  type="email" name="" id="new_email" placeholder="Email"></div>
-                    <div class="input" ><input  type="text" name="" id="new_password" placeholder="Password"></div>
-                    <button class="login">sign up</button>
+                <form  class="form_container2">
+                    <div class="input" ><input  type="text" name="" id="firstname" placeholder="First name" required></div>
+        
+                    <div class="input" ><input  type="text" name="" id="lastname" placeholder="Last name" required></div>
+                
+                    <div class="input" ><input  type="text" name="" id="username" placeholder="Username" required></div>
+                    <p class="username_err p_s"></p>
+                    <div class="input" ><input  type="email" name="" id="new_email" placeholder="Email" required></div>
+                    <p class="newemail_err p_s"></p>
+                    <div class="input" ><input  type="password" name="" id="new_password" placeholder="Password" required></div>
+                    
+                    <button class="login" id="signup">sign up</button>
                 </form>
 
-                <div class="login_div">
-                    <button class="login">Login</button>
+                <div class="git_div">
+                    
                     <div class="or"><p>or</p></div>
                     <div class="google_github">
                         <button class="google_github1"><img src="/img/Google (1).png" alt=""> Google </button>

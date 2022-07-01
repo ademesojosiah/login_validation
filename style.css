@@ -34,7 +34,7 @@ main{
     width: 160px;
     height: 185px;
     z-index: 3;
-    animation: rotatee 10s ease-in-out infinite;
+    animation: rotatee 12s ease-in-out alternate infinite;
 
 }
 
@@ -133,26 +133,29 @@ main{
 
 
 
+
 .right_section{    
     background-color: rgba(255, 255, 255, 0.356);
     border-top-right-radius  : 20px;
     border-bottom-right-radius  : 20px;
     display:flex;
-    justify-content: center;
-    /* align-items: center; */
     width: 43%;
     color: rgb(0, 0, 0);
     flex-direction: column;
-    padding: 50px;  
+    padding-left: 50px;  
+    padding-right: 50px;  
     text-align: center;
 }
 
+.right_section>p{
+    margin: 8px;
+}
 .right_section h3{
     text-align: center;
 }
 
 .form_container .input{
-    margin-top: 10px;
+    margin-top: 6px;
     width: 100%;
     border-radius: 10px;
     border: 1px solid #e3e3e3;
@@ -162,7 +165,7 @@ main{
 }
 
 .form_container p{
-    font-size: 14px;
+    font-size: 15px;
     text-align: right;
     color: #3939AB ;
     cursor: pointer;
@@ -182,15 +185,15 @@ main{
 
 
 .form_container{
-    margin-top: 20px;
+    margin-top: 5px;
 }
 .form_container2{
-    margin-top: 20px;
+    /* margin-top: 5px; */
     display: none;
 }
 
 .form_container2 .input{
-    margin-top: 10px;
+    margin-top: 6px;
     width: 100%;
     border-radius: 10px;
     border: 1px solid #e3e3e3;
@@ -320,4 +323,9 @@ margin-right: 10px;
 
 .registration2:hover{
     transform: scale(0.9);
+}
+
+.p_s{
+    margin-top:0px ;
+    margin-bottom: 0px;
 }
