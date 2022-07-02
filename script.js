@@ -117,6 +117,8 @@ class NewUsers{
         this.email = email;
         this.password = password;
         this.dataBases = dataBases || [];
+
+        
     }
     
     saveUserInfo(){
@@ -138,7 +140,12 @@ class NewUsers{
                 newEmailErr.textContent ="email already exists";
                 return;
                 
-            }else{
+            }else if(this.email === ""){
+                newEmailErr.style.color ="red";
+                newEmailErr.textContent ="no email entered";
+                return;
+            }
+            else{
                 this.saveUserInfo();
                 formContainer.style.display = "block";
                 formContainer2.style.display = "none";
@@ -159,6 +166,10 @@ class NewUsers{
             if(this.username === dataBase.username){              
                 newUsernameErr.style.color ="red";
                 newUsernameErr.textContent ="username already exists";          
+            }else if(this.username === ""){
+                newEmailErr.style.color ="red";
+                newEmailErr.textContent ="no Username entered";
+                return;
             }
         }
     }
