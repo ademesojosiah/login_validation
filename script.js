@@ -40,18 +40,31 @@ let password = document.querySelector("#new_password");
 let oldemail = document.querySelector("#email");
 let oldpassword = document.querySelector("#password");
 
+//welcome back
+let welcomeBack = document.querySelector("#welcome_back");
 
 
+//ring circle 2
+let ringCircle = document.querySelector(".ring_circle2")
 
+ 
 
 
 const dataBases = [{
-    firstname:"jojo",
-    lastname:"ade",
-    username:"jojoade",
-    email:"jojo@gmail.com",
-    password:"123pass"
-}];
+                    firstname:"jojo",
+                    lastname:"ade",
+                    username:"jojoade",
+                    email:"jojo@gmail.com",
+                    password:"123pass"
+                },
+                {
+                    firstname:"john",
+                    lastname:"doe",
+                    username:"johndoe01",
+                    email:"johndoe@gmail.com",
+                    password:"123pass"
+                }
+];
 
 
 class oldUser{
@@ -64,15 +77,36 @@ class oldUser{
     validateInfo(){
         for(let dataBase of this.dataBases){
             if(this.email !== dataBase.email || this.password!== dataBase.password){
-                userErr.style.color = "red"
-                userErr.textContent = "incorrect email or password "
+                userErr.style.color = "red";
+                userErr.textContent = "incorrect email or password ";
+
+            }else{
+                userErr.remove()
+                const username = this.dataBases.filter((database)=>{
+                    if (this.email===database.email){
+                        return database;
+                    }
+                })
+                
+                
+                welcomeBack.textContent = ` Welcome Back ${username[0].firstname}`;
+                ringCircle.style.bottom ="40%";
+                ringCircle.style.right ="25%";
+                ringCircle.style.animation ="rotatee 12s ease-in-out alternate infinite";
+                formContainer.style.display = "none";
+                formContainer2.style.display = "none";
+                signUpBtn.style.display = "none";
+                logInBtn.style.display = "none";
+                loginParent.style.display = "none";
+                welcomeTest.textContent =  `Welcome Back ${username[0].firstname} `;
+                accountConfirmation.style.display = "none"
+
             }
     }
 
 
 }
 }
-
 
 
 class NewUsers{
@@ -104,6 +138,18 @@ class NewUsers{
                 newEmailErr.textContent ="email already exists";
                 return;
                 
+            }else{
+                this.saveUserInfo();
+                formContainer.style.display = "block";
+                formContainer2.style.display = "none";
+                signUpBtn.style.display = "none";
+                logInBtn.style.display = "none";
+                loginParent.style.display = "none";
+                welcomeTest.style.color = "#3939AB"
+                welcomeTest.textContent = `welcome ${this.firstname} ${this.lastname} 
+                                            please sign in`;
+                accountConfirmation.style.display ="none"
+                console.log(dataBases);
             }
         }
     }
@@ -112,9 +158,7 @@ class NewUsers{
         for(let dataBase of this.dataBases){
             if(this.username === dataBase.username){              
                 newUsernameErr.style.color ="red";
-                newUsernameErr.textContent ="username already exists";
-                return;
-                
+                newUsernameErr.textContent ="username already exists";          
             }
         }
     }
@@ -137,17 +181,8 @@ login.addEventListener('click',(e)=>{
 signUp.addEventListener('click',(e)=>{
     let user1 = new NewUsers(firstname.value,lastname.value,username.value,email.value,password.value,dataBases)
     e.preventDefault();
-    user1.validateEmail();
     user1.validateUsername();
-    user1.saveUserInfo();
-    formContainer.style.display = "block";
-    formContainer2.style.display = "none";
-    signUpBtn.style.display = "flex";
-    logInBtn.style.display = "none";
-    loginParent.style.display = "block";
-    welcomeTest.textContent = "Welcome";
-    accountConfirmation.textContent ="Have no account yet ?"
-    console.log(dataBases);
+    user1.validateEmail();
 
 
 })
@@ -162,6 +197,7 @@ signUpBtn.addEventListener('click',()=>{
         loginParent.style.display = "none";
         welcomeTest.textContent = "Create Account";
         accountConfirmation.textContent ="Already registered ?"
+
     
     
     })
