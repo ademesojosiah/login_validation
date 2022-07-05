@@ -155,6 +155,7 @@ class NewUsers{
                 welcomeTest.style.color = "#3939AB"
                 welcomeTest.textContent = `welcome ${this.firstname} ${this.lastname} 
                                             please sign in`;
+                userErr.textContent =""
                 accountConfirmation.style.display ="none"
                 console.log(dataBases);
             }
